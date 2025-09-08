@@ -1,0 +1,28 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* Custom CSS variables for theming */
+@theme {
+  --color-primary: #16a34a;
+  --color-primary-dull: #15803d;
+}
+
+/* Apply Inter font globally */
+html {
+  font-family: 'Inter', sans-serif;
+  
+  font-weight: 400; /* Regular */
+}
+
+/* Universal styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #787777 #1e1e1e;
+}
+
+body {
+  color: white;
+  background-color: #09090B;
+}
