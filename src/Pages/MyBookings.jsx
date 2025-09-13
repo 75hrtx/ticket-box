@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 
+// Base URL comes from env, falls back to localhost (dev)
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function MyBookings() {
   const { user } = useUser();
   const [bookings, setBookings] = useState([]);
@@ -16,7 +19,8 @@ export default function MyBookings() {
 
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/bookings?userId=${user.id}`);
+        const res = await fetch(`${API_URL}/api/bookings?userId=${user.id}`);
+        if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
         const data = await res.json();
 
         console.log("📦 Bookings response from server:", data);
@@ -32,11 +36,11 @@ export default function MyBookings() {
 
   // Cancel booking
   const handleCancel = async (id) => {
-    const confirm = window.confirm("Are you sure you want to cancel this booking?");
-    if (!confirm) return;
+    const confirmCancel = window.confirm("Are you sure you want to cancel this booking?");
+    if (!confirmCancel) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/bookings/${id}`, {
+      const res = await fetch(`${API_URL}/api/bookings/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Failed to cancel booking");
