@@ -7,12 +7,27 @@ export default function MyBookings() {
 
   // Fetch bookings from backend
   useEffect(() => {
-    if (!user) return;
+    if (!user?.id) {
+      console.log("⚠️ No user ID found yet.");
+      return;
+    }
 
-    fetch(`http://localhost:3000/api/bookings?userId=${user.id}`)
-      .then((res) => res.json())
-      .then((data) => setBookings(data.bookings || []))
-      .catch((err) => console.error(err));
+    console.log("📌 Fetching bookings for user ID:", user.id);
+
+    const fetchBookings = async () => {
+      try {
+        const res = await fetch(`http://localhost:3000/api/bookings?userId=${user.id}`);
+        const data = await res.json();
+
+        console.log("📦 Bookings response from server:", data);
+
+        setBookings(data.bookings || []);
+      } catch (err) {
+        console.error("❌ Error fetching bookings:", err);
+      }
+    };
+
+    fetchBookings();
   }, [user]);
 
   // Cancel booking
@@ -26,7 +41,6 @@ export default function MyBookings() {
       });
       if (!res.ok) throw new Error("Failed to cancel booking");
 
-      // Remove cancelled booking from state
       setBookings((prev) => prev.filter((b) => b._id !== id));
       alert("Booking cancelled successfully!");
     } catch (err) {
