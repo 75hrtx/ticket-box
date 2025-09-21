@@ -1,4 +1,4 @@
-# Ticket-Box
+# 🎬Ticket-Box✨
 Hold onto your popcorn 🍿—I’ve just built something that’s going to change the way you book movie tickets. Introducing Ticket-Box! 🎬✨
 
 ⚡ Why you NEED to check it out:
