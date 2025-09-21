@@ -16,3 +16,4 @@ Fully functional MERN stack: That’s right, the magic behind it is built using 
 
 # A dynamic.txt Project
 
+![Ticket Box UI]([images/ticket-box.png](https://github.com/75hrtx/ticket-box/blob/main/images/1.jpg))
