@@ -16,5 +16,7 @@ Fully functional MERN stack: That’s right, the magic behind it is built using 
 
 # A dynamic.txt Project
 
-![Alt text](https://github.com/75hrtx/ticket-box/raw/614bbc5136aaf853f0689e43ec4cc700f9e06c52/images/1.jpg)
-![Image 2](https://raw.githubusercontent.com/75hrtx/ticket-box/318e5f406e759212085c0766ddf823b714cd63ca/images/2.jpg)
+![Home](https://github.com/75hrtx/ticket-box/raw/614bbc5136aaf853f0689e43ec4cc700f9e06c52/images/1.jpg)
+![Movie Details](https://raw.githubusercontent.com/75hrtx/ticket-box/318e5f406e759212085c0766ddf823b714cd63ca/images/2.jpg)
+![Movie Ticket Booking Page](https://raw.githubusercontent.com/75hrtx/ticket-box/60aeb8e09370e9e5ae9dec5c0e8fa99506db38bc/images/3.jpg)
+
